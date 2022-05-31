@@ -1,6 +1,6 @@
 import { normalizeWhiteSpaces } from 'normalize-text';
 
-export default (profileUrl, dom) => {
+const maryKeyParser = (profileUrl, dom) => {
   const name = dom.querySelector('.ibc-name h1') ? dom.querySelector('.ibc-name h1').textContent : '-';
   const status = dom.querySelector('.ibc-title') ? dom.querySelector('.ibc-title').textContent : '-';
   const mobilePhone = dom.querySelector('[data-phone-type="Mobile"]') ? dom.querySelector('[data-phone-type="Mobile"]').textContent : '-';
@@ -24,3 +24,5 @@ export default (profileUrl, dom) => {
     profileUrl,
   ];
 };
+
+export { maryKeyParser };
