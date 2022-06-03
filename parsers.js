@@ -25,4 +25,8 @@ const maryKeyParser = (profileUrl, dom) => {
   ];
 };
 
-export { maryKeyParser };
+const avonParser = (avonProfile) => {
+
+};
+
+export { maryKeyParser, avonParser };

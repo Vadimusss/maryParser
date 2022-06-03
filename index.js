@@ -1,50 +1,94 @@
 import axios from 'axios';
-import jsdom from 'jsdom';
 import fs from 'fs'
+import { normalizeWhiteSpaces } from 'normalize-text';
+import { generateSubUrls, makeUniqIdSet } from './utils.js';
+import promiseAllEnd from 'promiseallend';
+import _ from 'lodash';
 
-const url = 'https://my.avon.ru/api/findarepapi/findbylocation/?longitude=34.485&latitude=63.080';
-const start = [35.540, 57.030];
-const end = [36.540, 56.700]
+/* долгота, широта */
+const start = [26.82, 68.45];
+const end = [61.98, 50.43];
+const uniqIdSet = makeUniqIdSet();
 
-const run = async ([startLat, startlng], [stopLat, stoplng]) => {
+const run = async ([startLng, startLat], [stopLng, stopLat]) => {
+  let currentLng = startLng;
   let currentLat = startLat;
-  let currentLng = startlng;
   let isRun = true;
+  let logStringCount = 0;
+  let isOffset = false;
+  let offset = 0.02;
 
   while (isRun) {
-    const url = `https://my.avon.ru/api/findarepapi/findbylocation/?longitude=${currentLat}&latitude=${currentLng}`;
-    await fetchProfiles(url);
-    currentLat += 0.02;
-  } else
+    const urls = generateSubUrls(currentLng, currentLat, 0.04, 10);
+    urls.map((url) => console.log(url));
+    await fetchProfiles(urls);
 
-};
+    if (logStringCount < 11) {
+      fs.appendFileSync('parseLog.csv', `\n\'${currentLng.toFixed(2)}:${currentLat.toFixed(2)}\',`);
+      logStringCount++;
+    } else {
+      fs.truncateSync('parseLog.csv');
+      logStringCount = 0;
+    }
 
-const fetchProfiles = async (url) => {
-  try {
-    const { data } = await axios.get(url);
-    return data.Data.Representatives;
-    // console.log(profiles);
-    // fs.appendFileSync('result.csv', `\n${string}`);
-  } catch (error) {
-    console.log(`error message ===> ${error.message}`);
-    // fs.appendFileSync('errors.csv', `\n\'${url}\',`);
+    if (currentLng < stopLng) {
+      currentLng += 0.4;
+    } else if (currentLat > stopLat) {
+      currentLng = startLng;
+      if (isOffset) {
+        currentLng + offset;
+      }
+      isOffset = !isOffset;
+      currentLat -= 0.02;
+    } else {
+      isRun = false;
+    }
   }
 };
 
-console.log(fetchProfiles(url));
-/* profiles.forEach(async (url) => {
+const fetchProfiles = async (urls) => {
   try {
-    const { data } = await axios.get(url);
 
-    const dom = new jsdom.JSDOM(data).window.document;
-    const userData = makePageParse(url, dom);
-    const string = userData.join('~');
-    console.log(string);
-    fs.appendFileSync('result.csv', `\n${string}`);
-    // sleep(100);
+    const promises = urls.map(async (url) => {
+      return axios.get(url, { timeout: 5000, maxContentLength: Infinity, maxBodyLength: Infinity });
+    });
+
+    const responses = await promiseAllEnd(promises, {
+      unhandledRejection(error, index) {
+        console.log(`error message in promiseAllEnd ===> ${error.message}`);
+        console.log(`error url in promiseAllEnd ===> ${urls[index]}`);
+        fs.appendFileSync('errors.csv', `\n\'in promiseAllEnd => ${urls[index]} - ${error.message}\',`);
+      }
+    });
+    const allProfiles = responses.map((response) => response.data.Data.Representatives);
+    const uniqProfiles = _.uniqBy(allProfiles.flat(), 'Id');
+
+    if (uniqProfiles.length > 0) {
+      uniqProfiles.forEach(({
+        Email,
+        FullName,
+        Id,
+        Message,
+        Mobile,
+        City,
+        StoreName,
+        ContactDetails,
+        DeliveryDescription,
+      }) => {
+        if (uniqIdSet.idIsUniq(Id)) {
+          uniqIdSet.add(Id);
+          const string = normalizeWhiteSpaces([Id, FullName, Mobile, Email, City, Message, StoreName, ContactDetails, DeliveryDescription].join('~'));
+          console.log(string);
+          fs.appendFileSync('result.csv', `\n${string}`);
+        } else {
+          console.log(`not uniq id ===> ${Id}`);
+        };
+      });
+    }
   } catch (error) {
-    console.log(`error message ===> ${error.message}`);
-    fs.appendFileSync('errors.csv', `\n\'${url}\',`);
+    console.log(`error message in catch ===> ${error.message}`);
+    fs.appendFileSync('errors.csv', `\n\'in catch => ${error.message}\',`);
   }
-});
- */
+};
+
+run(start, end);

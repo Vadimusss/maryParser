@@ -1,0 +1,12 @@
+
+'in catch => Cannot read properties of undefined (reading 'data')',
+'in promiseAllEnd => https://my.avon.ru/api/findarepapi/findbylocation/?longitude=28.42&latitude=68.45 - timeout of 5000ms exceeded',
+'in catch => Cannot read properties of undefined (reading 'data')',
+'in promiseAllEnd => https://my.avon.ru/api/findarepapi/findbylocation/?longitude=32.54&latitude=68.45 - timeout of 5000ms exceeded',
+'in promiseAllEnd => https://my.avon.ru/api/findarepapi/findbylocation/?longitude=32.58&latitude=68.45 - timeout of 5000ms exceeded',
+'in promiseAllEnd => https://my.avon.ru/api/findarepapi/findbylocation/?longitude=32.62&latitude=68.45 - timeout of 5000ms exceeded',
+'in promiseAllEnd => https://my.avon.ru/api/findarepapi/findbylocation/?longitude=32.78&latitude=68.45 - timeout of 5000ms exceeded',
+'in catch => Cannot read properties of undefined (reading 'data')',
+'in promiseAllEnd => https://my.avon.ru/api/findarepapi/findbylocation/?longitude=39.34&latitude=68.45 - timeout of 5000ms exceeded',
+'in catch => Cannot read properties of undefined (reading 'data')',
+'in promiseAllEnd => https://my.avon.ru/api/findarepapi/findbylocation/?longitude=46.30&latitude=68.45 - timeout of 5000ms exceeded',

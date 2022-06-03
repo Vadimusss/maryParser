@@ -13,6 +13,8 @@
   "dependencies": {
     "axios": "^0.27.2",
     "jsdom": "^19.0.0",
-    "normalize-text": "^2.4.0"
+    "lodash": "^4.17.21",
+    "normalize-text": "^2.4.0",
+    "promiseallend": "^2.0.2"
   }
 }
