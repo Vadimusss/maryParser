@@ -35,10 +35,12 @@ const run = async ([startLng, startLat], [stopLng, stopLat]) => {
       currentLng += 0.4;
     } else if (currentLat > stopLat) {
       currentLng = startLng;
-      if (isOffset) {
-        currentLng + offset;
-      }
+      console.log(`currentLng no offset is ===> ${currentLng}`);
       isOffset = !isOffset;
+      if (isOffset) {
+        currentLng = currentLng + offset;
+        console.log(`currentLng + offset is ===> ${currentLng}`);
+      }
       currentLat -= 0.02;
     } else {
       isRun = false;
