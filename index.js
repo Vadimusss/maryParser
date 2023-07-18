@@ -1,117 +1,38 @@
 import fs from 'fs';
 import excel4node from 'excel4node';
 import superagent from 'superagent';
+import { zipcodes } from './mexicoPostcode.js';
 
 const agent = superagent.agent();
 
-function* generatePagesLiks() {
-  let page = 1;
-
-  while (true) {
-    yield `https://duplo-api.shinservice.ru/api/v1/tyre.json?page=${page}&_aid=128&_cid=3170&_uid=6437`;
-    page++;
-  }
-}
-
 const run = async () => {
-  let token = '';
 
   try {
-    const dashboard = await agent.post('https://duplo-api.shinservice.ru/api/v1/user/login.json?')
-      .send(JSON.stringify({ email: 'sales@tyres4u.ru', password: '291600' }))
-      .set('Content-type', 'application/json; charset=UTF-8');
+    const response = await agent.get('https://ncf-experience-natura-bff-prd.us-e1.cloudhub.io/cn/search?query=01130&from=0&size=100')
+      .set('Accept', '*/*')
+      .set('Accept-Encoding', 'gzip, deflate, br')
+      .set('Accept-Language', 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7')
+      .set('Cache-Control', 'no-cache')
+      .set('Connection', 'keep-alive')
+      .set('Host', 'ncf-experience-natura-bff-prd.us-e1.cloudhub.io')
+      .set('Origin', 'https', '//www.avon.mx')
+      .set('Pragma', 'no-cache')
+      .set('Referer', 'https', '//www.avon.mx/')
+      .set('Sec-Fetch-Dest', 'empty')
+      .set('Sec-Fetch-Mode', 'cors')
+      .set('Sec-Fetch-Site', 'cross-site')
+      .set('User-Agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36')
+      .set('client_id', '5e63ef537c0844f283e68d1ddafd7435')
+      .set('client_secret', 'D3ACCc14132D4f0eA115bC5D0DE2b84D')
+      .set('sec-ch-ua', '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"')
+      .set('sec-ch-ua-mobile', '?0')
+      .set('sec-ch-ua-platform', '"Linux"')
+      .set('tenant_id', 'avon-mexico');
 
-    token = JSON.parse(dashboard.text).token;
+    console.log(response._body.results);
   } catch (error) {
-    console.log(`Authorization error, message ===> ${error.message}`);
-    fs.appendFileSync('errors.csv', `\n\'Authorization error, ===> ${error.message}\',`);
-  }
-
-  const generator = generatePagesLiks();
-  let isDone = false;
-  let currentRow = 2;
-  let url = '';
-  const excelWorkbook = new excel4node.Workbook();
-  const excelWorksheet = excelWorkbook.addWorksheet('Шины');
-  [
-    'Марка',
-    'Модель',
-    'Ширина',
-    'Высота',
-    'Диаметр',
-    'Сезон',
-    'Runflat',
-    'Шип',
-    'Индекс нагрузки',
-    'Индекс скорости',
-    'Наличие',
-    'Цена',
-  ].forEach((value, index) => excelWorksheet.cell(1, index + 1).string(value));
-
-  try {
-    while (!isDone) {
-      url = generator.next().value;
-      const response = await agent.get(url)
-        .set('authorization', `Bearer ${token}`);
-
-      const tyresArray = JSON.parse(response.text);
-
-      if (tyresArray.length !== 0) {
-
-        tyresArray.forEach(({
-          brand: { name: brandName },
-          model: { name: modelName },
-          size: { width },
-          size: { profile },
-          size: { radius },
-          params: {
-            season: { id: season },
-            runflat,
-            pins,
-            loadIndex: { index: loadIndex },
-            speedRating: { index: speedIndex },
-          },
-          stock: {
-            price,
-            amount,
-          }
-        }) => {
-          const row = [
-            brandName.split(' ')[0],
-            modelName,
-            width,
-            profile,
-            radius,
-            season,
-            runflat ? 'да' : 'нет',
-            pins ? 'да' : 'нет',
-            loadIndex,
-            speedIndex,
-            amount,
-            price,
-          ];
-
-          row.forEach((value, index) => {
-            if (typeof value === 'number') {
-              excelWorksheet.cell(currentRow, index + 1).number(value);
-            } else {
-              excelWorksheet.cell(currentRow, index + 1).string(String(value));
-            };
-          });
-
-          currentRow++;
-        });
-
-      } else {
-        isDone = true;
-        excelWorkbook.write('stock.xlsx');
-        console.log('Success!!!');
-      }
-    }
-  } catch (error) {
-    console.log(`Parse error, message ===> ${error.message}`);
-    fs.appendFileSync('errors.csv', `\n\'Parse error, url: ${url}, message: ${error.message}\',`);
-  }
+    console.log(`${error.message}`);
+  };
 };
 
 run();
