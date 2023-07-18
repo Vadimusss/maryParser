@@ -5,16 +5,28 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "webpack --mode production"
   },
   "author": "",
   "license": "ISC",
-  "type": "module",
   "dependencies": {
     "axios": "^0.27.2",
+    "excel4node": "^1.8.2",
+    "install": "^0.13.0",
     "jsdom": "^19.0.0",
     "lodash": "^4.17.21",
     "normalize-text": "^2.4.0",
-    "promiseallend": "^2.0.2"
+    "npm": "^9.6.6",
+    "promiseallend": "^2.0.2",
+    "puppeteer": "^15.3.0",
+    "superagent": "^8.0.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "babel-loader": "^9.1.2",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
   }
 }

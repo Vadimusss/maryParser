@@ -1,0 +1,58 @@
+[
+  {
+      "category": 3,
+      "translates": {
+          "category_long_name": "12%",
+          "category_short_name": "12%",
+          "category_genitive_name": "12%",
+          "country_name": "Россия"
+      },
+      "category__name": "12",
+      "category__display_name": "12%",
+      "person_id": 4269,
+      "person__is_bronze_club": false,
+      "person__photo": "/static/images/Unknown.png",
+      "person__abo_number": "3179930",
+      "person__region_id": 7,
+      "person__region__code": "Sib_n_far_east",
+      "person__region__name": "Россия - Сибирь и дальний восток",
+      "person__have_personal_page": false,
+      "nomination_period": "2018-11-01",
+      "created": "2020-02-14T15:09:16.765Z",
+      "person__names": [
+          [
+              "ЦЭСМАА",
+              "ДАЛАЙ"
+          ]
+      ],
+      "person__genders": []
+  },
+  {
+      "category": 3,
+      "translates": {
+          "category_long_name": "12%",
+          "category_short_name": "12%",
+          "category_genitive_name": "12%",
+          "country_name": "Россия"
+      },
+      "category__name": "12",
+      "category__display_name": "12%",
+      "person_id": 4266,
+      "person__is_bronze_club": false,
+      "person__photo": "/static/images/Unknown.png",
+      "person__abo_number": "2793204",
+      "person__region_id": 7,
+      "person__region__code": "Sib_n_far_east",
+      "person__region__name": "Россия - Сибирь и дальний восток",
+      "person__have_personal_page": false,
+      "nomination_period": "2018-11-01",
+      "created": "2020-02-14T15:09:16.755Z",
+      "person__names": [
+          [
+              "УУРИЙНЦОЛМОН",
+              "СКАНДЕРВЕГ"
+          ]
+      ],
+      "person__genders": []
+  }
+]

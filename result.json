@@ -1,0 +1,186 @@
+{
+  "payload": [
+    {
+      "id": "1387302",
+      "type": "tyre",
+      "title": "Michelin Pilot Sport 4 SUV",
+      "brandSku": "832822",
+      "country": null,
+      "labels": [
+        {
+          "type": "credit",
+          "description": "Рассрочка TINKOFF",
+          "imageUrl": "//www.shinservice.ru/m/i/label/rassrochka-tinkoff.png",
+          "imageNewUrl": "//www.shinservice.ru/m/i/label/new/rassrochka-tinkoff-1.svg",
+          "url": "/offers/credit-rassrochka-all/",
+          "clientDescription": "Рассрочка TINKOFF",
+          "createdType": "elasticsearch",
+          "title": "Рассрочка 0-0-6 на шины и диски"
+        },
+        {
+          "type": "credit",
+          "description": "Кредит TINKOFF",
+          "imageUrl": "//www.shinservice.ru/m/i/label/credit-tinkoff.png",
+          "imageNewUrl": "//www.shinservice.ru/m/i/label/new/credit-tinkoff.svg",
+          "url": "/offers/credit-rassrochka-all/",
+          "clientDescription": "Кредит TINKOFF",
+          "createdType": "elasticsearch",
+          "title": "Рассрочка 0-0-6 на шины и диски"
+        },
+        {
+          "type": "common",
+          "description": "Хранение Michelin лето 2022",
+          "imageUrl": "//www.shinservice.ru/m/i/label/hr_free.png",
+          "imageNewUrl": "//www.shinservice.ru/m/i/label/t-dep-new.svg",
+          "url": "/offers/besplatniy-shinomontazh-michelin-leto/",
+          "clientDescription": "При покупке комплекта летних шин «Michelin» (4 шт.), Вы получите хранение в ПОДАРОК!",
+          "createdType": "elasticsearch",
+          "title": "MICHELIN: шиномонтаж летних шин и хранение в подарок"
+        },
+        {
+          "type": "free-service",
+          "description": "Акция «К СЕЗОНУ ГОТОВ» Шиномонтаж",
+          "imageUrl": "//www.shinservice.ru/m/i/label/wheel_service_free_1.png",
+          "imageNewUrl": "//www.shinservice.ru/m/i/label/ts-new.svg",
+          "url": "/offers/k-sezony-gotov22/",
+          "clientDescription": "Шиномонтаж в подарок.",
+          "createdType": "elasticsearch",
+          "title": "К СЕЗОНУ ГОТОВ!"
+        },
+        {
+          "type": "common",
+          "description": "Акция «К СЕЗОНУ ГОТОВ» Хранение",
+          "imageUrl": "//www.shinservice.ru/m/i/label/hr_free.png",
+          "imageNewUrl": "//www.shinservice.ru/m/i/label/t-dep_do_1.svg?1",
+          "url": "/offers/k-sezony-gotov22/",
+          "clientDescription": "Хранение купленных шин до установки на автомобиль в подарок.",
+          "createdType": "elasticsearch",
+          "title": "К СЕЗОНУ ГОТОВ!"
+        },
+        {
+          "type": "common",
+          "description": "Рассрочка 0-0-6",
+          "imageUrl": "//www.shinservice.ru/m/i/label/rassrochka-sber.png",
+          "imageNewUrl": "//www.shinservice.ru/m/i/label/new/rassrochka-sber-1.svg?3",
+          "url": "/offers/credit-rassrochka-all/",
+          "clientDescription": "Рассрочка 0-0-6",
+          "createdType": "elasticsearch",
+          "title": "Рассрочка 0-0-6 на шины и диски"
+        },
+        {
+          "type": "credit",
+          "description": "Рассрочка HCB",
+          "imageUrl": "//www.shinservice.ru/m/i/label/rassrochka-hcb.png",
+          "imageNewUrl": "//www.shinservice.ru/m/i/label/new/rassrochka-hcb.svg",
+          "url": "/offers/credit-rassrochka-all/",
+          "clientDescription": "Рассрочка HCB",
+          "createdType": "elasticsearch",
+          "title": "Рассрочка 0-0-6 на шины и диски"
+        },
+        {
+          "type": "credit",
+          "description": "Кредит HCB",
+          "imageUrl": "//www.shinservice.ru/m/i/label/credit-hcb.png",
+          "imageNewUrl": "//www.shinservice.ru/m/i/label/new/credit-hcb.svg",
+          "url": "/offers/credit-rassrochka-all/",
+          "clientDescription": "Кредит HCB",
+          "createdType": "elasticsearch",
+          "title": "Рассрочка 0-0-6 на шины и диски"
+        },
+        {
+          "type": "guarantee",
+          "description": "Расширенная гарантия ШИНСЕРВИС 2023",
+          "imageUrl": "//www.shinservice.ru/m/i/label/guarantee.png",
+          "imageNewUrl": "//www.shinservice.ru/m/i/label/guarantee-new.png",
+          "url": "/info/guarantee/shinservice/",
+          "clientDescription": "Расширенная гарантия ШИНСЕРВИС",
+          "createdType": "elasticsearch",
+          "title": null
+        }
+      ],
+      "size": {
+        "width": 265,
+        "profile": 50,
+        "diameter": 20,
+        "diameterFormatted": "R20",
+        "isCommerce": false,
+        "text": "265/50 R20"
+      },
+      "params": {
+        "season": {
+          "id": "summer",
+          "text": null,
+          "code": null
+        },
+        "runflat": false,
+        "pins": false,
+        "loadIndex": {
+          "index": "111",
+          "maxWeight": "1090"
+        },
+        "speedRating": {
+          "index": "Y",
+          "maxSpeed": "300"
+        },
+        "tLong": 2291.6372000000001,
+        "homologation": null,
+        "prodYear": null,
+        "xl": false,
+        "ply": null,
+        "tyreClass": null,
+        "priceSegment": "A"
+      },
+      "market": {
+        "zoneId": 1,
+        "price": 38720,
+        "additionalPrice": null,
+        "priceFormatted": "38&nbsp;720",
+        "amount": 44,
+        "isDiscount": false,
+        "isNovelty": false,
+        "isSale": false,
+        "bonus": 0,
+        "bonusFormatted": "",
+        "unit": "шт.",
+        "bonusRatio": 1,
+        "bonusAmount": null
+      },
+      "url": "/catalog/michelin/summer/pilotsport4-suv/265-50-R20/111Y/?idx=1387302",
+      "inCart": 0,
+      "images": [
+        {
+          "url": "//s3.shinservice.ru/catalog/michelin/pilot_sport-4suv.jpg?v=46",
+          "isMainImage": true,
+          "position": 0
+        }
+      ],
+      "reviewsCount": 6,
+      "availabilityDetails": [
+        {
+          "title": "сейчас",
+          "amount": "более&nbsp;20&nbsp;шт.",
+          "_amount": 20,
+          "score": 0
+        }
+      ],
+      "benefitCollection": [
+        {
+          "priceBefore": 6000,
+          "priceAfter": 0,
+          "discount": 6000,
+          "type": null,
+          "label": "Сезонное хранение",
+          "link": "/offers/besplatniy-shinomontazh-michelin-leto/"
+        },
+        {
+          "priceBefore": 6760,
+          "priceAfter": 0,
+          "discount": 6760,
+          "type": null,
+          "label": "Шиномонтаж",
+          "link": "/offers/k-sezony-gotov22/"
+        }
+      ]
+    }
+  ]
+}

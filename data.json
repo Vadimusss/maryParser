@@ -1,0 +1,772 @@
+{
+  "code": "000",
+  "message": "Ok",
+  "data": {
+    "list": [
+      {
+        "repAcctNr": 17661513,
+        "name": "CHERYL ABNER",
+        "repIntroduceResList": [],
+        "phoneNumber": "7192448564",
+        "farDistance": null,
+        "address1": "4801 BAKER GROVE RD #208",
+        "address2": null,
+        "cityName": "ACWORTH",
+        "stateCode": "GA",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [],
+        "storeUrl": "cherylabner",
+        "repSnsResList": [],
+        "profileImageUrl": null,
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30101",
+        "firstName": "CHERYL",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 17705663,
+        "name": "MEKLIT ABERA",
+        "repIntroduceResList": [],
+        "phoneNumber": "2404743145",
+        "farDistance": null,
+        "address1": "4400 APPLE TREE DR STONE MOUNTAIN",
+        "address2": null,
+        "cityName": "",
+        "stateCode": "",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [],
+        "storeUrl": "mabera",
+        "repSnsResList": [],
+        "profileImageUrl": null,
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30083",
+        "firstName": "MEKLIT",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 3263447,
+        "name": "SANOBER ABBAS",
+        "repIntroduceResList": [],
+        "phoneNumber": "4047867714",
+        "farDistance": null,
+        "address1": "1156 SCENIC VIEW CIR",
+        "address2": null,
+        "cityName": "LAWRENCEVILLE",
+        "stateCode": "GA",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [],
+        "storeUrl": "sanacreations",
+        "repSnsResList": [],
+        "profileImageUrl": "https://www.avon.com/assets/user/3263447.jpg",
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30044",
+        "firstName": "SANOBER",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 15629989,
+        "name": "TABITHA ABNEY",
+        "repIntroduceResList": [],
+        "phoneNumber": "6786639672",
+        "farDistance": null,
+        "address1": "590 HAMMETT DR",
+        "address2": null,
+        "cityName": "DECATUR",
+        "stateCode": "GA",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [
+          "English"
+        ],
+        "storeUrl": "tabithaabney",
+        "repSnsResList": [],
+        "profileImageUrl": "https://www.avon.com/assets/user/15629989.jpg",
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30032",
+        "firstName": "TABITHA",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 4375159,
+        "name": "TAYO ABDUL",
+        "repIntroduceResList": [],
+        "phoneNumber": "4045673262",
+        "farDistance": null,
+        "address1": "7772 THRAILKILL RD",
+        "address2": null,
+        "cityName": "JONESBORO",
+        "stateCode": "GA",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [],
+        "storeUrl": "tabdul",
+        "repSnsResList": [],
+        "profileImageUrl": "https://www.avon.com/assets/user/4375159.jpg",
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30236",
+        "firstName": "TAYO",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 17272009,
+        "name": "AMY ABBOTT",
+        "repIntroduceResList": [],
+        "phoneNumber": "4703899152",
+        "farDistance": null,
+        "address1": "105 HUNTINGTON PL",
+        "address2": null,
+        "cityName": "COVINGTON",
+        "stateCode": "GA",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [],
+        "storeUrl": "aabbott9915",
+        "repSnsResList": [],
+        "profileImageUrl": null,
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30016",
+        "firstName": "AMY",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 8185666,
+        "name": "ANNIE ABRAMS",
+        "repIntroduceResList": [],
+        "phoneNumber": "7065624940",
+        "farDistance": null,
+        "address1": "3028 N JOHN ST",
+        "address2": null,
+        "cityName": "THOMASVILLE",
+        "stateCode": "GA",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [],
+        "storeUrl": "annieabrams",
+        "repSnsResList": [],
+        "profileImageUrl": "https://www.avon.com/assets/user/8185666.jpg",
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "31792",
+        "firstName": "ANNIE",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 17735507,
+        "name": "DEANN ABBOTT",
+        "repIntroduceResList": [],
+        "phoneNumber": "9794505798",
+        "farDistance": null,
+        "address1": "780 FLOYD AVE",
+        "address2": null,
+        "cityName": "",
+        "stateCode": "",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [],
+        "storeUrl": "dabbott",
+        "repSnsResList": [],
+        "profileImageUrl": null,
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "31312",
+        "firstName": "DEANN",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 17735297,
+        "name": "JARVA ABRAMS",
+        "repIntroduceResList": [],
+        "phoneNumber": "4045635310",
+        "farDistance": null,
+        "address1": "2055 ALISON CT SW APT 7",
+        "address2": null,
+        "cityName": "",
+        "stateCode": "",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [],
+        "storeUrl": "jarvaabrams",
+        "repSnsResList": [],
+        "profileImageUrl": null,
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30311",
+        "firstName": "JARVA",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 17160735,
+        "name": "PAMELA ABBOTT",
+        "repIntroduceResList": [],
+        "phoneNumber": "6787399251",
+        "farDistance": null,
+        "address1": "6 MOOSILAUKEE DRIVE",
+        "address2": null,
+        "cityName": "MINERAL BLUFF",
+        "stateCode": "GA",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [
+          "English"
+        ],
+        "storeUrl": "pamelaabbott",
+        "repSnsResList": [],
+        "profileImageUrl": null,
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30559",
+        "firstName": "PAMELA",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 13284433,
+        "name": "RAMONA ABRAMS",
+        "repIntroduceResList": [],
+        "phoneNumber": "7622258055",
+        "farDistance": null,
+        "address1": "1406 GOUGH RED HILL RD",
+        "address2": null,
+        "cityName": "KEYSVILLE",
+        "stateCode": "GA",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [
+          "English"
+        ],
+        "storeUrl": "ramonaabrams",
+        "repSnsResList": [],
+        "profileImageUrl": null,
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30816",
+        "firstName": "RAMONA",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 17269294,
+        "name": "SONIA ABONSE",
+        "repIntroduceResList": [],
+        "phoneNumber": "7065810708",
+        "farDistance": null,
+        "address1": "1060 HELTON ST",
+        "address2": null,
+        "cityName": "DALTON",
+        "stateCode": "GA",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [],
+        "storeUrl": "sabonse",
+        "repSnsResList": [],
+        "profileImageUrl": null,
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30720",
+        "firstName": "SONIA",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 17232272,
+        "name": "OLA ABDULLAH",
+        "repIntroduceResList": [
+          {
+            "introCode": "INTE",
+            "introText": "Reading, dance, sewing, writing, selling"
+          },
+          {
+            "introCode": "SELL",
+            "introText": "I love selling Avon because it provides more income; and I get fulfilled by selling quality products"
+          }
+        ],
+        "phoneNumber": "2292722014",
+        "farDistance": null,
+        "address1": "420 VINTAGE RD",
+        "address2": null,
+        "cityName": "ALBANY",
+        "stateCode": "GA",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [
+          "English"
+        ],
+        "storeUrl": "oabdullah",
+        "repSnsResList": [],
+        "profileImageUrl": "https://www.avon.com/assets/user/17232272.jpg",
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "31705",
+        "firstName": "OLA",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 15103791,
+        "name": "YVETTE ABRAHAM",
+        "repIntroduceResList": [],
+        "phoneNumber": "7709875606",
+        "farDistance": null,
+        "address1": "4386 LUXEMBOURG DR",
+        "address2": null,
+        "cityName": "DECATUR",
+        "stateCode": "GA",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [
+          "English"
+        ],
+        "storeUrl": "yabraham",
+        "repSnsResList": [],
+        "profileImageUrl": "https://www.avon.com/assets/user/15103791.jpg",
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30034",
+        "firstName": "YVETTE",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 17678464,
+        "name": "BEVERLEY ABERNATHY",
+        "repIntroduceResList": [],
+        "phoneNumber": "7065021254",
+        "farDistance": null,
+        "address1": "11574 BIG CREEK RD",
+        "address2": null,
+        "cityName": "ELLIJAY",
+        "stateCode": "GA",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [],
+        "storeUrl": "babernathy",
+        "repSnsResList": [],
+        "profileImageUrl": null,
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30536",
+        "firstName": "BEVERLEY",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 17704728,
+        "name": "ANGELIQUE ABERCROMBIE",
+        "repIntroduceResList": [],
+        "phoneNumber": "7709126934",
+        "farDistance": null,
+        "address1": "1110 BALLPARK PARK LANE APT 9301",
+        "address2": null,
+        "cityName": "LAWRENCEVILLE",
+        "stateCode": "GA",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [],
+        "storeUrl": "aabercrombie",
+        "repSnsResList": [],
+        "profileImageUrl": "https://www.avon.com/assets/user/17704728.jpg",
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30043",
+        "firstName": "ANGELIQUE",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 17494931,
+        "name": "ASHLEY ABERCROMBIE",
+        "repIntroduceResList": [],
+        "phoneNumber": "7063313367",
+        "farDistance": null,
+        "address1": "150 DEERSTAND DR",
+        "address2": null,
+        "cityName": "",
+        "stateCode": "",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [
+          "English"
+        ],
+        "storeUrl": "aambercrombie",
+        "repSnsResList": [],
+        "profileImageUrl": null,
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30540",
+        "firstName": "ASHLEY",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 17535326,
+        "name": "CHRISTINA ABERCROMBIE",
+        "repIntroduceResList": [],
+        "phoneNumber": "4045573137",
+        "farDistance": null,
+        "address1": "104 COUNTRY MEADOWS WAY",
+        "address2": null,
+        "cityName": "JENKINSBURG",
+        "stateCode": "GA",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [],
+        "storeUrl": "christinaabercrombie",
+        "repSnsResList": [],
+        "profileImageUrl": null,
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30234",
+        "firstName": "CHRISTINA",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 22364869,
+        "name": "Emma Abee",
+        "repIntroduceResList": [
+          {
+            "introCode": "INTE",
+            "introText": "I love art, music, and makeup!"
+          },
+          {
+            "introCode": "SELL",
+            "introText": "I want to share beauty and confidence with all people. Everyone deserves to be pampered!"
+          }
+        ],
+        "phoneNumber": "4045074702",
+        "farDistance": null,
+        "address1": "4780 CEDAR BROOK DR SE",
+        "address2": null,
+        "cityName": "",
+        "stateCode": "",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [],
+        "storeUrl": "eabee",
+        "repSnsResList": [],
+        "profileImageUrl": "https://www.avon.com/assets/user/22364869-60a0ea18-1fb4-4ffd-b3c5-8d9d75139e02.jpg",
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30094",
+        "firstName": "Emma",
+        "categories": [
+          {
+            "dvsnCd": 3,
+            "name": "Skincare"
+          },
+          {
+            "dvsnCd": 4,
+            "name": "Makeup"
+          }
+        ],
+        "lifeStyles": [
+          {
+            "dvsnCd": 10,
+            "name": "Social/ Outgoing"
+          },
+          {
+            "dvsnCd": 6,
+            "name": "Caregiver"
+          },
+          {
+            "dvsnCd": 8,
+            "name": "Risk Taker"
+          },
+          {
+            "dvsnCd": 9,
+            "name": "Goal- Oriented"
+          }
+        ],
+        "interests": [
+          {
+            "dvsnCd": 17,
+            "name": "Shopaholic & Product Obsessed"
+          },
+          {
+            "dvsnCd": 21,
+            "name": "Books/ Reading"
+          },
+          {
+            "dvsnCd": 22,
+            "name": "Arts/ Music"
+          },
+          {
+            "dvsnCd": 4,
+            "name": "Community, Volunteering & Fundraising"
+          },
+          {
+            "dvsnCd": 5,
+            "name": "Mentoring & Coaching"
+          }
+        ],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 22514765,
+        "name": "Brandi Abanathy",
+        "repIntroduceResList": [],
+        "phoneNumber": "4782304850",
+        "farDistance": null,
+        "address1": "215 HUNTER RD",
+        "address2": null,
+        "cityName": "",
+        "stateCode": "",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [],
+        "storeUrl": "babanathy",
+        "repSnsResList": [],
+        "profileImageUrl": "https://www.avon.com/assets/user/22514765-8e436f90-8ea2-4c03-a532-3239fd2288b8.jpeg",
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "31014",
+        "firstName": "Brandi",
+        "categories": [
+          {
+            "dvsnCd": 2,
+            "name": "Style"
+          },
+          {
+            "dvsnCd": 3,
+            "name": "Skincare"
+          },
+          {
+            "dvsnCd": 4,
+            "name": "Makeup"
+          },
+          {
+            "dvsnCd": 5,
+            "name": "Fragrance"
+          }
+        ],
+        "lifeStyles": [
+          {
+            "dvsnCd": 12,
+            "name": "Financially-Driven"
+          },
+          {
+            "dvsnCd": 14,
+            "name": "Desire to Make Extra Money"
+          },
+          {
+            "dvsnCd": 2,
+            "name": "Parenting young school-age children (3 -10 years)"
+          },
+          {
+            "dvsnCd": 9,
+            "name": "Goal- Oriented"
+          }
+        ],
+        "interests": [
+          {
+            "dvsnCd": 11,
+            "name": "Food/ Cooking"
+          },
+          {
+            "dvsnCd": 15,
+            "name": "Crafts & Sewing"
+          },
+          {
+            "dvsnCd": 2,
+            "name": "Travel"
+          },
+          {
+            "dvsnCd": 20,
+            "name": "Entertainment, TV & Movies"
+          },
+          {
+            "dvsnCd": 8,
+            "name": "Networking"
+          }
+        ],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      },
+      {
+        "repAcctNr": 22405148,
+        "name": "Cathy Abernathy",
+        "repIntroduceResList": [],
+        "phoneNumber": "4703986931",
+        "farDistance": null,
+        "address1": "750 TOWE CHAPEL RD NW",
+        "address2": null,
+        "cityName": "",
+        "stateCode": "",
+        "mediaUrl": null,
+        "matchRate": 0,
+        "matchTags": [],
+        "speakLanguage": [],
+        "storeUrl": "cathyabernathy",
+        "repSnsResList": [],
+        "profileImageUrl": null,
+        "badgeResList": [],
+        "deliveryOption": "B",
+        "zipCode": "30103",
+        "firstName": "Cathy",
+        "categories": [],
+        "lifeStyles": [],
+        "interests": [],
+        "nameDisplaySetting": {
+          "customProfile": "NAME",
+          "findRep": "NAME",
+          "repStore": "NAME"
+        }
+      }
+    ],
+    "page": 1,
+    "count": 3
+  }
+}

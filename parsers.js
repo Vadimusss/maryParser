@@ -29,4 +29,8 @@ const avonParser = (avonProfile) => {
 
 };
 
+const amwayParser = async (dom) => {
+  amway
+};
+
 export { maryKeyParser, avonParser };

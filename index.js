@@ -1,96 +1,117 @@
-import axios from 'axios';
-import fs from 'fs'
-import { normalizeWhiteSpaces } from 'normalize-text';
-import { generateSubUrls, makeUniqIdSet } from './utils.js';
-import promiseAllEnd from 'promiseallend';
-import _ from 'lodash';
+import fs from 'fs';
+import excel4node from 'excel4node';
+import superagent from 'superagent';
 
-/* долгота, широта */
-const start = [26.82, 68.45];
-const end = [61.98, 50.43];
-const uniqIdSet = makeUniqIdSet();
+const agent = superagent.agent();
 
-const run = async ([startLng, startLat], [stopLng, stopLat]) => {
-  let currentLng = startLng;
-  let currentLat = startLat;
-  let isRun = true;
-  let logStringCount = 0;
-  let isOffset = false;
-  let offset = 0.02;
+function* generatePagesLiks() {
+  let page = 1;
 
-  while (isRun) {
-    const urls = generateSubUrls(currentLng, currentLat, 0.04, 10);
-    urls.map((url) => console.log(url));
-    await fetchProfiles(urls);
-
-    if (logStringCount < 11) {
-      fs.appendFileSync('parseLog.csv', `\n\'${currentLng.toFixed(2)}:${currentLat.toFixed(2)}\',`);
-      logStringCount++;
-    } else {
-      fs.truncateSync('parseLog.csv');
-      logStringCount = 0;
-    }
-
-    if (currentLng < stopLng) {
-      currentLng += 0.4;
-    } else if (currentLat > stopLat) {
-      currentLng = startLng;
-      console.log(`currentLng no offset is ===> ${currentLng}`);
-      isOffset = !isOffset;
-      if (isOffset) {
-        currentLng = currentLng + offset;
-        console.log(`currentLng + offset is ===> ${currentLng}`);
-      }
-      currentLat -= 0.02;
-    } else {
-      isRun = false;
-    }
+  while (true) {
+    yield `https://duplo-api.shinservice.ru/api/v1/tyre.json?page=${page}&_aid=128&_cid=3170&_uid=6437`;
+    page++;
   }
-};
+}
 
-const fetchProfiles = async (urls) => {
+const run = async () => {
+  let token = '';
+
   try {
+    const dashboard = await agent.post('https://duplo-api.shinservice.ru/api/v1/user/login.json?')
+      .send(JSON.stringify({ email: 'sales@tyres4u.ru', password: '291600' }))
+      .set('Content-type', 'application/json; charset=UTF-8');
 
-    const promises = urls.map(async (url) => {
-      return axios.get(url, { timeout: 5000, maxContentLength: Infinity, maxBodyLength: Infinity });
-    });
+    token = JSON.parse(dashboard.text).token;
+  } catch (error) {
+    console.log(`Authorization error, message ===> ${error.message}`);
+    fs.appendFileSync('errors.csv', `\n\'Authorization error, ===> ${error.message}\',`);
+  }
 
-    const responses = await promiseAllEnd(promises, {
-      unhandledRejection(error, index) {
-        console.log(`error message in promiseAllEnd ===> ${error.message}`);
-        console.log(`error url in promiseAllEnd ===> ${urls[index]}`);
-        fs.appendFileSync('errors.csv', `\n\'in promiseAllEnd => ${urls[index]} - ${error.message}\',`);
+  const generator = generatePagesLiks();
+  let isDone = false;
+  let currentRow = 2;
+  let url = '';
+  const excelWorkbook = new excel4node.Workbook();
+  const excelWorksheet = excelWorkbook.addWorksheet('Шины');
+  [
+    'Марка',
+    'Модель',
+    'Ширина',
+    'Высота',
+    'Диаметр',
+    'Сезон',
+    'Runflat',
+    'Шип',
+    'Индекс нагрузки',
+    'Индекс скорости',
+    'Наличие',
+    'Цена',
+  ].forEach((value, index) => excelWorksheet.cell(1, index + 1).string(value));
+
+  try {
+    while (!isDone) {
+      url = generator.next().value;
+      const response = await agent.get(url)
+        .set('authorization', `Bearer ${token}`);
+
+      const tyresArray = JSON.parse(response.text);
+
+      if (tyresArray.length !== 0) {
+
+        tyresArray.forEach(({
+          brand: { name: brandName },
+          model: { name: modelName },
+          size: { width },
+          size: { profile },
+          size: { radius },
+          params: {
+            season: { id: season },
+            runflat,
+            pins,
+            loadIndex: { index: loadIndex },
+            speedRating: { index: speedIndex },
+          },
+          stock: {
+            price,
+            amount,
+          }
+        }) => {
+          const row = [
+            brandName.split(' ')[0],
+            modelName,
+            width,
+            profile,
+            radius,
+            season,
+            runflat ? 'да' : 'нет',
+            pins ? 'да' : 'нет',
+            loadIndex,
+            speedIndex,
+            amount,
+            price,
+          ];
+
+          row.forEach((value, index) => {
+            if (typeof value === 'number') {
+              excelWorksheet.cell(currentRow, index + 1).number(value);
+            } else {
+              excelWorksheet.cell(currentRow, index + 1).string(String(value));
+            };
+          });
+
+          currentRow++;
+        });
+
+      } else {
+        isDone = true;
+        excelWorkbook.write('stock.xlsx');
+        console.log('Success!!!');
       }
-    });
-    const allProfiles = responses.map((response) => response.data.Data.Representatives);
-    const uniqProfiles = _.uniqBy(allProfiles.flat(), 'Id');
-
-    if (uniqProfiles.length > 0) {
-      uniqProfiles.forEach(({
-        Email,
-        FullName,
-        Id,
-        Message,
-        Mobile,
-        City,
-        StoreName,
-        ContactDetails,
-        DeliveryDescription,
-      }) => {
-        if (uniqIdSet.idIsUniq(Id)) {
-          uniqIdSet.add(Id);
-          const string = normalizeWhiteSpaces([Id, FullName, Mobile, Email, City, Message, StoreName, ContactDetails, DeliveryDescription].join('~'));
-          console.log(string);
-          fs.appendFileSync('result.csv', `\n${string}`);
-        } else {
-          console.log(`not uniq id ===> ${Id}`);
-        };
-      });
     }
   } catch (error) {
-    console.log(`error message in catch ===> ${error.message}`);
-    fs.appendFileSync('errors.csv', `\n\'in catch => ${error.message}\',`);
+    console.log(`Parse error, message ===> ${error.message}`);
+    fs.appendFileSync('errors.csv', `\n\'Parse error, url: ${url}, message: ${error.message}\',`);
   }
 };
 
-run(start, end);
+run();
