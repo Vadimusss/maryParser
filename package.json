@@ -20,7 +20,7 @@
     "normalize-text": "^2.4.0",
     "npm": "^9.6.6",
     "promiseallend": "^2.0.2",
-    "puppeteer": "^15.3.0",
+    "puppeteer": "^15.5.0",
     "superagent": "^8.0.9"
   },
   "devDependencies": {
