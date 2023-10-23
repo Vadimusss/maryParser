@@ -2,11 +2,20 @@ import axios from 'axios';
 import fs from 'fs'
 import { normalizeWhiteSpaces } from 'normalize-text';
 import { generateSubUrls, makeUniqIdSet } from './utils.js';
-import promiseAllEnd from 'promiseallend';
+import { JSDOM } from 'jsdom';
 import _ from 'lodash';
-import puppeteer from 'puppeteer'; /* установить отдельно */
 
-const fetchExtendedData = async (url, id) => {
+function* generatePagesLiks() {
+  let page = 1;
+  const numberOfPages = 5;
+
+  while (page <= numberOfPages) {
+    yield `https://www.roi.ru/poll/?page=${page}`;
+    page++;
+  }
+}
+
+/* const fetchExtendedData = async (url, id) => {
   console.log(`${url}${id}`);
 
   const browser = await puppeteer.launch();
@@ -25,47 +34,26 @@ const fetchExtendedData = async (url, id) => {
   await browser.close();
 
   return phoneNumber;
-};
+}; */
 
 const run = async () => {
-  const data = fs.readFileSync('profiles.json', 'utf8');
-  const profiles = JSON.parse(data);
-
-  for (const {
-    person__abo_number,
-    person__have_personal_page,
-    category__display_name,
-    person__region__name,
-    person__names,
-    person__genders,
-    person__is_bronze_club,
-    nomination_period,
-  } of profiles) {
+  const urlGenerator = generatePagesLiks();
+  for(let url of urlGenerator) {
     try {
-      let phoneNumber = person__have_personal_page ?
-        await fetchExtendedData('https://www.amway.ru/users/', person__abo_number) : '-';
-
-      const nameOne = person__names[0].join(' ').trim();
-      const nameTwo = person__names.length === 2 ? person__names[1].join(' ').trim() : '-';
-
-
-      const string = normalizeWhiteSpaces([
-        person__abo_number,
-        nameOne,
-        nameTwo,
-        person__genders.join(', '),
-        phoneNumber,
-        person__region__name,
-        category__display_name,
-        String(person__is_bronze_club),
-        nomination_period,
-      ].join('~'));
-      console.log(string);
-      fs.appendFileSync('result.csv', `\n${string}`);
+      const response = await axios.get(url);
+      const document = new JSDOM(response.data).window.document;
+      const links = document.querySelectorAll('.item a');
+      links.forEach(link => {
+        console.log(`https://www.roi.ru${link.href}`);
+      });
+  
+      //console.log(response.data);
+      
+      // fs.appendFileSync('result.csv', `\n${string}`);
     } catch (error) {
       console.log(`error message in catch ===> ${error.message}`);
-      fs.appendFileSync('errors.csv', `\n\'in catch => ${error.message}\',`);
-      fs.appendFileSync('errors.csv', `\n\'url is => https://www.amway.ru/users/${person__abo_number}\',`);
+      // fs.appendFileSync('errors.csv', `\n\'in catch => ${error.message}\',`);
+      // fs.appendFileSync('errors.csv', `\n\'url is => https://www.amway.ru/users/${person__abo_number}\',`);
     }
   }
 };
