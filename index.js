@@ -7,7 +7,7 @@ import _ from 'lodash';
 
 function* generatePagesLiks() {
   let page = 1;
-  const numberOfPages = 5;
+  const numberOfPages = 47;
 
   while (page <= numberOfPages) {
     yield `https://www.roi.ru/poll/?page=${page}`;
@@ -15,45 +15,41 @@ function* generatePagesLiks() {
   }
 }
 
-/* const fetchExtendedData = async (url, id) => {
-  console.log(`${url}${id}`);
+const fetchInitiativeData = async (url) => {
+  const response = await axios.get(url);
+  const document = new JSDOM(response.data).window.document;
 
-  const browser = await puppeteer.launch();
+  const number = document.querySelector('.b-initiative-props__number').textContent;
+  const name = document.querySelector('h1').textContent;
+  const affirmative = parseInt(document.querySelector('.js-voting-info-affirmative').textContent.replace(/[^\d]/g, ''));
+  const negative = parseInt(document.querySelector('.js-voting-info-negative').textContent.replace(/[^\d]/g, ''));
 
-  const page = await browser.newPage();
-  await page.setViewport({ width: 1600, height: 900 });
-  await page.goto(`${url}${id}`, { waitUntil: 'networkidle2' });
+  return [number, name, affirmative, negative, url];
+};
 
-  const phoneNumber = await page.evaluate(() => {
-    if (document.querySelector('a[data-v-43c2983d]') !== null) {
-      return document.querySelector('a[data-v-43c2983d]').href.slice(4);
-    }
-    return '-';
-  });
-  // console.log(phoneNumber);
-  await browser.close();
+const getInitiativesLinks = async (url, base) => {
+  const response = await axios.get(url);
+  const document = new JSDOM(response.data).window.document;
+  const urls = [...document.querySelectorAll('.item a')].map((element) => `${base}${element.href}`);
 
-  return phoneNumber;
-}; */
+  return urls;
+};
 
 const run = async () => {
   const urlGenerator = generatePagesLiks();
-  for(let url of urlGenerator) {
+  for (let url of urlGenerator) {
     try {
-      const response = await axios.get(url);
-      const document = new JSDOM(response.data).window.document;
-      const links = document.querySelectorAll('.item a');
-      links.forEach(link => {
-        console.log(`https://www.roi.ru${link.href}`);
+      const initiativesLinks = await getInitiativesLinks(url, 'https://www.roi.ru');
+      const initiativesData = await Promise.all(initiativesLinks.map(async (link) => await fetchInitiativeData(link)));
+
+      initiativesData.forEach((initiativeDataArr) => {
+        const dataString = initiativeDataArr.join('~');
+        console.log(dataString);
+        fs.appendFileSync('result.csv', `\n${dataString}`);
       });
-  
-      //console.log(response.data);
-      
-      // fs.appendFileSync('result.csv', `\n${string}`);
     } catch (error) {
       console.log(`error message in catch ===> ${error.message}`);
-      // fs.appendFileSync('errors.csv', `\n\'in catch => ${error.message}\',`);
-      // fs.appendFileSync('errors.csv', `\n\'url is => https://www.amway.ru/users/${person__abo_number}\',`);
+      fs.appendFileSync('errors.csv', `\n\'in catch => ${error.message}\',`);
     }
   }
 };
