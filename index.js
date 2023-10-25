@@ -7,10 +7,10 @@ import _ from 'lodash';
 
 function* generatePagesLiks() {
   let page = 1;
-  const numberOfPages = 47;
+  const numberOfPages = 950;
 
   while (page <= numberOfPages) {
-    yield `https://www.roi.ru/poll/?page=${page}`;
+    yield `https://www.roi.ru/poll/?level=2,3&archive=1${page}`;
     page++;
   }
 }
@@ -20,15 +20,21 @@ const fetchInitiativeData = async (url) => {
   const document = new JSDOM(response.data).window.document;
 
   const number = document.querySelector('.b-initiative-props__number').textContent;
+  const level = document.querySelector('.b-initiative-props').lastElementChild.lastElementChild.textContent;
   const name = document.querySelector('h1').textContent;
   const affirmative = parseInt(document.querySelector('.js-voting-info-affirmative').textContent.replace(/[^\d]/g, ''));
   const negative = parseInt(document.querySelector('.js-voting-info-negative').textContent.replace(/[^\d]/g, ''));
+  const date = document.querySelector('.inic-side-info>.date').textContent;
 
-  return [number, name, affirmative, negative, url];
+  return [number, level, name, affirmative, negative, url, date];
 };
 
 const getInitiativesLinks = async (url, base) => {
-  const response = await axios.get(url);
+  const response = await axios.get(url, {
+    headers: {
+      'Cookie': 'regionId=46',
+    }
+  });
   const document = new JSDOM(response.data).window.document;
   const urls = [...document.querySelectorAll('.item a')].map((element) => `${base}${element.href}`);
 
